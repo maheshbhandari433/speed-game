@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/forest.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.circles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.circle.active {
+    background-color: tomato;
+    background-image: url(images/bird-watching.avif);
+    background-size: cover;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    background-color:lightgreen;
+    border-radius: 50%;
+    pointer-events: none;
+} 
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f3f3f3;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: 5rem 1rem;
+    cursor: pointer;
+}
+
+.overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.modal {
+    background-color: white;
+    position: relative;
+    padding: 2rem;
+    width: 40%;
+    height: 25%;
+    border-radius: 10px;
+    position: relative;
+    color: black;
+}
+
+.modal button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    margin: 0;
+}
+
+.modal .score {
+    font-size: 1rem;
+}  
+
+.hidden {
+    display: none;
+}

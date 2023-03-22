@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <section>
+            <h1>Speed game</h1>
+            <p>Score: <span class="score"></span></p>
+            <div class="circles">
+                <div class="circle">
+
+                </div>
+
+                <div class="circle">
+
+                </div>
+
+                <div class="circle">
+
+                </div>
+
+                <div class="circle">
+
+                </div>
+
+            </div>
+
+            <div>
+                <button id="start">
+                    Start
+                </button>
+
+                <button id="end" class="hidden">
+                    End
+                </button>
+            </div>
+
+            <div class="overlay">
+                <div class="modal">
+                    <p>Oops, game over</p>
+                    <p>Your score was <span class="score-end"></span></p>
+
+                    <div>
+
+                    <button id="close">close</button>
+                </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
