@@ -4,31 +4,36 @@ const startButton = document.querySelector('#start')
 const endButton = document.querySelector('#end')
 const scoreSpan= document.querySelector('.score')
 const scoreEnd= document.querySelector('.score-end')
+const scoreEndMessage= document.querySelector('.score-end-message')
 const overlay = document.querySelector('.overlay')
 
 let score = 0
 let active = 0
 let timer
-let pace = 1000
+let pace = 1200
 let rounds = 0
+
+let startSound = new Audio('sounds/src_sounds_start.mp3')
+let endSound = new Audio('sounds/src_sounds_end.mp3')
+let clickSound = new Audio('sounds/src_sounds_click.mp3')
+
 
 circles.forEach((circle, i) => {
     circle.addEventListener('click', () => clickCircle(i))
-}
-)
+})
 
 function randomNumber (min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min
 }
 
 function clickCircle (i) {
-    console.log('circle index' , i)
+    clickSound.play()
 
     if(i !== active) {
         return endGame()
     }
 
-    score = score + 100
+    score = score + 10
     scoreSpan.textContent = score
 }
 
@@ -39,7 +44,9 @@ function enableCircles () {
 } 
 
 function startGame () {
-
+    if(rounds === 0) {
+        startSound.play()   
+    }
     if(rounds >= 20) {
         return endGame()
     }
@@ -55,7 +62,7 @@ function startGame () {
     circles[active].classList.remove('active')
     active = nextActive
 
-    console.log(nextActive)
+    /* console.log(nextActive) */
 
     timer = setTimeout(startGame, pace)
 
@@ -76,13 +83,21 @@ function startGame () {
 }
 
 function endGame () {
-
+    endSound.play()
     scoreEnd.textContent = score
     endButton.classList.remove('hidden')
     startButton.classList.add('hidden')
     overlay.style.visibility = 'visible'
 
-    console.log('game ended')
+    if (score < 20) {
+        scoreEndMessage.textContent = "Your score is low, better luck next time!"
+    }
+    else if (score < 50) {
+        scoreEndMessage.textContent = "Not so bad, you can still improve!"
+    }
+    else {
+        scoreEndMessage.textContent = "Nice! You did great!"
+    }
 
     clearTimeout(timer)
 }

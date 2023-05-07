@@ -5,16 +5,20 @@
 }
 
 body {
-    font-family: 'Dosis', sans-serif;
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/forest.jpg);
-    background-attachment: fixed;
-    background-size: cover;
+    font-family:'Courier New', Courier, monospace;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/appicon-style-cute-bird-geometric-soft-shades-high-contrast.png);
+    background-attachment: fixed; 
+    background-size: 70%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: white;
+}
+
+h1 {
+    margin: 1em;
 }
 
 .circles {
@@ -28,6 +32,7 @@ body {
     background-color: tomato;
     background-image: url(images/bird-watching.avif);
     background-size: cover;
+    opacity: 100%;
 }
 
 .circle {
@@ -40,6 +45,7 @@ body {
     background-color:lightgreen;
     border-radius: 50%;
     pointer-events: none;
+    opacity: 40%
 } 
 
 button {
@@ -65,18 +71,21 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .modal {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     position: relative;
     padding: 2rem;
-    width: 40%;
-    height: 25%;
+    width: 60%;
+    height: 45%;
     border-radius: 10px;
     position: relative;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .modal button {
@@ -87,8 +96,12 @@ button {
     margin: 0;
 }
 
-.modal .score {
-    font-size: 1rem;
+.modal p {
+    margin: 1rem;
+} 
+
+.modal .score-end {
+    font-size: 2rem;
 }  
 
 .hidden {
